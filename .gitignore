@@ -1,0 +1,25 @@
+# logs
+*.log
+npm-debug.log*
+
+# dependencies
+/node_modules
+
+# cache files
+.DS_Store
+.npm
+
+# build results
+
+
+# local configs
+lauch.json 
+.vscode
+
+# mock data
+/mock/*
+
+.vscode
+.deploy_git
+node_modules
+public
