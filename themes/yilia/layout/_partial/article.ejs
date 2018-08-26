@@ -127,3 +127,18 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </section>
 <% } %>
+<!-- gitment -->
+<section>
+  <div id="gitcomments" class="m-gitcomments"></div>
+  <script>
+    var gitment = new Gitment({
+      owner: 'wait-hua',
+      repo: 'wait-hua.github.io',
+      oauth: {
+        client_id: 'd0ce7f75f6a405e152f7',
+        client_secret: '66977d7b9e9a42634158269245d0b103ee2c5bff',
+      },
+    });
+    gitment.render('gitcomments');
+  </script>
+</section>
