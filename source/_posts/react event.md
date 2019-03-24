@@ -232,6 +232,17 @@ _handleTopLevel: function (topLevelType, targetInst, nativeEvent, nativeEventTar
 
 EventPluginHub.extractEvents 调用了事件 Plugins 进行合成事件。合成事件处理了事件跨浏览器的兼容性(如 transitionEnd, webkitTransitionEnd, MozTransitionEnd 和 oTransitionEnd)等，并且采用了一个事件池的一个概念，避免了频繁的创建对象分配内存及垃圾回收操作，达到一个性能优化。
 
+我们可以直观感受下 react 的事件池概念，在事件回调中，如果我们要异步的去拿取 event 事件时，就会发现该对象的 nativeEvent 是 null 的，如下面 setTimeout 里面。这就是 react 事件池的一个优化机制，在事件对象被用完之后，会重新的放回池中，供下次使用。如果想要异步的返回事件对象的话，需要调用 event.persist(); 让事件不进行释放。
+
+```jsx
+onMouseDown(event) {
+  // event.persist();
+  setTimeout(() => {
+    console.log(event);
+  }, 100)
+}
+```
+
 此处就不再介绍合成事件的过程，感兴趣的同学可以参考这边文章：[React细节知识之对象池](https://www.jianshu.com/p/89e625e33506)
 
 
