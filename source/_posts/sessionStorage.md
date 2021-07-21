@@ -1,6 +1,6 @@
 ---
-title: 多 tab 页 sessionStorage 共享问题
-date: 2019-06-23 21:17:45
+title: 多 tab 页 sessionStorage 不共享问题
+date: 2021-07-21 15:17:45
 tags: sessionStorage
 ---
 
